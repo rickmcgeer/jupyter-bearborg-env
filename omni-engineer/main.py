@@ -303,7 +303,8 @@ def get_streaming_response(messages, model):
             "reasoning": full_reasoning
         }
     except Exception as e:
-        print_colored(f"Error in streaming response: {e}", Fore.RED)
+        # print_colored(f"Error in streaming response: {e}", Fore.RED)
+        print_colored(f"Sorry, the input {payload['messages']['content']} wasn't understood by {payload['model']}", Fore.RED)
         return {"content": "", "reasoning": ""}
 
 def read_file_content(filepath):
